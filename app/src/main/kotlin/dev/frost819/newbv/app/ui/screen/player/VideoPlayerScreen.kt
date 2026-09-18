@@ -1,5 +1,5 @@
 package dev.frost819.newbv.app.ui.screen.player
-
+import androidx.compose.ui.platform.LocalView
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
