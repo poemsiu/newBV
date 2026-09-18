@@ -71,7 +71,7 @@ fun VideoPlayerScreen(
     val logger = Loggers.get("VideoPlayerScreen")
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
-
+    val view = LocalView.current
     val videoPlayer = playerViewModel.videoPlayer
     val danmakuPlayer = danmakuViewModel.danmakuPlayer
 
