@@ -216,7 +216,18 @@ fun VideoPlayerScreen(
             }
         }
     }
+// 播放视频时保持屏幕常亮，暂停或退出页面后恢复系统屏保策略
+DisposableEffect(uiState.playerState, uiState.isBuffering) {
+    val keepScreenOn =
+        uiState.playerState == PlayerState.Playing ||
+            uiState.isBuffering
 
+    view.keepScreenOn = keepScreenOn
+
+    onDispose {
+        view.keepScreenOn = false
+    }
+}
     // 生命周期管理：onResume 恢复播放，onPause 暂停
     DisposableEffect(lifecycleOwner) {
         val observer =
