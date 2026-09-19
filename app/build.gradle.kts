@@ -60,16 +60,16 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-            if (signingPropertiesFile.exists()) {
-                signingConfig = signingConfigs.getByName("release")
-            }
-        }
+    isMinifyEnabled = true
+    isShrinkResources = true
+    proguardFiles(
+        getDefaultProguardFile("proguard-android-optimize.txt"),
+        "proguard-rules.pro",
+    )
+
+    // Release 压缩构建，但使用默认 Debug 签名
+    signingConfig = signingConfigs.getByName("debug")
+}
         debug {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
