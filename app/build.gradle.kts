@@ -67,7 +67,7 @@ android {
         "proguard-rules.pro",
     )
 
-    // Release 压缩构建，但使用默认 Debug 签名
+    // 个人测试使用：Release 压缩构建，但使用 Android 默认 Debug 签名
     signingConfig = signingConfigs.getByName("debug")
 }
         debug {
